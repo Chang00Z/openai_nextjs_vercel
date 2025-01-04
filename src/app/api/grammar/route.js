@@ -4,6 +4,11 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+export const config = {
+  runtime: "edge",
+  regions: ["hnd1", "sin1"],
+};
+
 export async function POST(request) {
   try {
     const body = await request.json();
